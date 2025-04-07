@@ -49,4 +49,12 @@ currently_hash = parsed_pw_response.fetch("currently")
 
 current_temp = currently_hash.fetch("temperature")
 
-puts "The current temperature is " + current_temp.to_s + "."
+puts "The current temperature is " + current_temp.to_s + "°F."
+
+# get hourly data
+
+hourly_hash = parsed_pw_response.fetch("hourly")
+
+summary = hourly_hash.fetch("summary")
+
+pp "The weather conditions next hour will be " + summary.to_s.downcase + "."
